@@ -19,8 +19,10 @@ function pariDispari(somma){
 function converter(scelta){
     if(scelta == "pari"){
         return true;
-    }else{
+    }else if(scelta == "dispari"){
         return false;
+    }else{
+        return undefined;
     }
 }
 
@@ -28,8 +30,12 @@ function converter(scelta){
 let somma = sceltaNumero + estrazione();
 
 // annuncio vincitore
-if(pariDispari() == converter(scelta) ){
-    document.querySelector("body").innerHTML = `Hai vinto! ${pariDispari()} ${converter(scelta)}`
+if(converter(scelta) == undefined){
+    document.querySelector("body").innerHTML = "Errore, devi inserire la parola 'pari' o 'dispari'"
+}else if(sceltaNumero>5 || sceltaNumero<1){
+    document.querySelector("body").innerHTML = "Errore, devi inserire un numero compreso tra 1 e 5"
+}else if(pariDispari(somma) == converter(scelta)){
+    document.querySelector("body").innerHTML = `Hai vinto!`
 }else{
-    document.querySelector("body").innerHTML = `Hai perso ${pariDispari()} ${converter(scelta)}`
+    document.querySelector("body").innerHTML = `Hai perso.`
 }
