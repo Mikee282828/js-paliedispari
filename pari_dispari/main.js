@@ -32,6 +32,8 @@ let somma = sceltaNumero + estrazione();
 // annuncio vincitore
 if(converter(scelta) == undefined){
     document.querySelector("body").innerHTML = "Errore, devi inserire la parola 'pari' o 'dispari'"
+}else if(isNaN(somma)){
+    document.querySelector("body").innerHTML = "Errore, devi inserire un numero!"
 }else if(sceltaNumero>5 || sceltaNumero<1){
     document.querySelector("body").innerHTML = "Errore, devi inserire un numero compreso tra 1 e 5"
 }else if(pariDispari(somma) == converter(scelta)){
